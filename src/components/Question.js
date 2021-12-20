@@ -22,12 +22,8 @@ function Question() {
     const item = await fetchItem.json();
     setItem(item);
     console.log(item);
-
+    // test
     for (let i = 0; i < item.options.length; i++) {
-      <ul>
-        <li>item.options[i]</li>
-      </ul>;
-      //let options = item.options[i];
       console.log(item.options[i]);
     }
   };
