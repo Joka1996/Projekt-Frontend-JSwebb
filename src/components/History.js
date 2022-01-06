@@ -1,12 +1,15 @@
 import React from "react";
 import "../App.css";
+import Footer from "./Footer";
 
 function GetHistory() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="container">
         <h1>History</h1>
-      </header>
+        <h3>coming sooon...</h3>
+      </div>
+      <Footer />
     </div>
   );
 }

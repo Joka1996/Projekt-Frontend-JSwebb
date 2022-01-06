@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+.container {
+  min-height: 75vh;
+}
 
 nav {
   display: flex;
@@ -14,6 +17,7 @@ nav {
 .nav-links {
   width: 50%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   list-style: none;
@@ -21,4 +25,102 @@ nav {
 
 .nav-links a {
   color: white;
+  padding: 1%;
+}
+/*Dölj bilder i de object bilder inte finns*/
+.Display_none {
+  display: none;
+}
+
+/*bilder*/
+.Q_pics {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.Q_pics img {
+  max-width: 100%;
+  width: 10%;
+}
+.Desc_pics img {
+  max-width: 20%;
+}
+/*Nästa fråga*/
+.NextQuestion {
+  border-top: 1px solid black;
+  overflow-y: scroll;
+}
+.NextQuestion ul li {
+  list-style: none;
+  margin: 1%;
+}
+
+/*färg på frågor*/
+#RightAnswer {
+  color: green;
+  font-size: 1.5rem;
+}
+#WrongAnswer {
+  color: rgb(194, 0, 0);
+  font-size: 1.5rem;
+}
+
+/*svarsalternativ*/
+.Answer_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.Answer_btn button {
+  margin: 0.5%;
+}
+.Answer_btn button:hover {
+  background-color: rgb(126, 153, 163);
+  cursor: pointer;
+}
+
+.login-user form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  width: 10%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+
+.login-user form button {
+  margin-top: 10%;
+}
+.addQuestion form {
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+  width: 10%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+.addQuestion form input {
+  padding: 5px;
+  margin: 5px;
+}
+
+.logOut {
+  margin-top: 5%;
+}
+button {
+  padding: 5px;
+  font-size: 1.2rem;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.questionBox {
+  border: 1px solid black;
+  overflow-y: scroll;
+  max-width: 100%;
+  width: 50%;
+  margin: 0 auto;
 }

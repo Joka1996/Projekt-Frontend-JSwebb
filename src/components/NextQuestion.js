@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import Footer from "./Footer";
 
-function Question() {
+function NextQuestion() {
   //för att hämta id-nummer.
   let { id } = useParams();
   //console.log(id);
@@ -20,6 +20,7 @@ function Question() {
   //hämta alla
   const [items, setItems] = useState([]);
 
+  //funktion för att hämta enskild
   const getMovie = async () => {
     const fetchItem = await fetch(
       `https://projekt-backend-jswebb.herokuapp.com/api/movies/id=${id}`
@@ -27,10 +28,10 @@ function Question() {
 
     const item = await fetchItem.json();
     setItem(item);
-    console.log(item);
+    console.log(item.image);
   };
 
-  // hämta alla för att skicka vidare användaren
+  // hämta alla för att skicka vidare användaren till nästa fråga utan att gå tillbaka
   const fetchItems = async () => {
     const data = await fetch(
       "https://projekt-backend-jswebb.herokuapp.com/api/movies"
@@ -41,15 +42,6 @@ function Question() {
     setItems(items);
   };
 
-  /* detta kanske ska bort helt
-  const [count, setCount] = useState(0);
-  const Counter = () => {
-    items.forEach((element) => {
-      element = count + 1;
-      setCount(element);
-    });
-  };*/
-
   //Kolla om vald knapp stämmer och skicka meddelande
   const [score, setScore] = useState("");
   const checkAnswer = (is_correct) => {
@@ -59,8 +51,7 @@ function Question() {
       setScore(<p id="WrongAnswer">Wrong!</p>);
     }
   };
-
-  //skriv ut, map för att det är array
+  //hämta, map för att det är array
   return (
     <div className="App">
       <div className="container">
@@ -100,16 +91,16 @@ function Question() {
           )}
         </div>
         <div className="NextQuestion">
-          <h4>More Question</h4>
           <div className="GoBack">
             <button>
               <Link to={`/movies`}>To Movies</Link>
             </button>
           </div>
+          <h4>More Questions</h4>
           <ul>
             {items.map((c) => (
               <li>
-                <Link to={`/movies/nextquestion/${c._id}`}>
+                <Link to={`/movies/${c._id}`}>
                   {c.description.slice(0, 20)}...
                 </Link>
               </li>
@@ -122,4 +113,4 @@ function Question() {
   );
 }
 
-export default Question;
+export default NextQuestion;
