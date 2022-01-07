@@ -52,7 +52,7 @@ function Register() {
   const inUse = () => {
     setMessage(<h2>Username already in use.</h2>);
   };
-  // om lösenord/användarnamn fattas fungerar ej, men skickar inga tomma strängar.
+  // om lösenord/användarnamn fattas fungerar ej, men skickar inga tomma strängar till databasen.
   const invalid = () => {
     setMessage(<h2>Username/password must be inserted.</h2>);
   };

@@ -33,10 +33,7 @@ function MovieSelection() {
             <Link to={`/movieEasy/`}>PLAYYYY MEEEE</Link>
           </h2>
         </div>
-        <p>
-          These questions vary in difficulty, if you have suggestions on more
-          questions plz head over to About page
-        </p>
+        <p>These questions may vary in difficulty.</p>
         <h3>All the questions</h3>
         <div className="questionBox">
           {items.map((item) => (

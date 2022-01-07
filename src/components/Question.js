@@ -41,15 +41,6 @@ function Question() {
     setItems(items);
   };
 
-  /* detta kanske ska bort helt
-  const [count, setCount] = useState(0);
-  const Counter = () => {
-    items.forEach((element) => {
-      element = count + 1;
-      setCount(element);
-    });
-  };*/
-
   //Kolla om vald knapp stämmer och skicka meddelande
   const [score, setScore] = useState("");
   const checkAnswer = (is_correct) => {
