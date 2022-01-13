@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { Link } from "react-router-dom";
 
 import "../App.css";
 import Footer from "./Footer";
 
 function Login() {
+  let navigate = useNavigate();
   const [user_name, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -27,7 +30,8 @@ function Login() {
     setUsername("");
     setPassword("");
     localStorage.clear();
-    window.location.reload(false);
+    window.alert("User logged out");
+    return navigate("/login");
   };
 
   //logga in användare + felmeddelanden
